@@ -607,7 +607,8 @@ So change `GlobalSecurityConfiguration` to protect only `/api/` pages.
 That's all. Build and run again.
 
 
-Links:
-[1]: https://www.npmjs.com/package/keycloak-angular
-[2]: https://dzone.com/articles/secure-spring-boot-application-with-keycloak
-[3]: https://jwt.io/
+References:
+1. https://www.npmjs.com/package/keycloak-angular
+2. https://dzone.com/articles/secure-spring-boot-application-with-keycloak
+3. https://jwt.io/
+4. https://stackoverflow.com/questions/59289320/keycloak-check-sso-create
