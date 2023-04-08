@@ -561,11 +561,11 @@ public class BackendApplicationWebMvcConfigurer implements WebMvcConfigurer {
             <plugin>
                 <groupId>com.github.eirslett</groupId>
                 <artifactId>frontend-maven-plugin</artifactId>
-                <version>1.7.6</version>
+                <version>1.12.1</version>
                 <configuration>
                     <workingDirectory>./</workingDirectory>
-                    <nodeVersion>v16.13.2</nodeVersion>
-                    <npmVersion>8.4.1</npmVersion>
+                    <nodeVersion>v18.15.0</nodeVersion>
+                    <npmVersion>9.6.2</npmVersion>
                 </configuration>
                 <executions>
                     <execution>
