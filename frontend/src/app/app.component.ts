@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { KeycloakService } from 'keycloak-angular';
@@ -10,12 +9,13 @@ import { KeycloakProfile } from 'keycloak-js';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+
   title = 'frontend';
 
   public isLoggedIn = false;
   public userProfile: KeycloakProfile | null = null;
   
-  constructor(private readonly keycloak: KeycloakService, private http: HttpClient, public router : Router) {
+  constructor(private readonly keycloak: KeycloakService, public router : Router) {
   }
 
   public async ngOnInit() {
@@ -35,4 +35,5 @@ export class AppComponent implements OnInit {
   public logout() {
     this.keycloak.logout();
   }
+
 }

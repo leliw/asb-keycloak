@@ -22,9 +22,9 @@ function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
     keycloak.init({
       config: {
-        url: 'http://localhost:8080/auth',
-        realm: 'master',
-        clientId: 'asb-keycloak',
+        url: 'http://localhost:8080/',
+        realm: 'asb',
+        clientId: 'frontend',
       },
       initOptions: {
         onLoad: 'check-sso',

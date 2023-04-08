@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { map, switchMap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { HttpClient } from '@angular/common/http';
 
@@ -37,5 +37,6 @@ export class HomeComponent {
   public ngOnInit() {
     this.http.get("/api/hello", {responseType: 'text'}).subscribe(res => this.helloFromServer = res);
   }
+
 }
   
