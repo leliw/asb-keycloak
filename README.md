@@ -658,9 +658,41 @@ So change `GlobalSecurityConfiguration` to protect only `/api/` pages.
 
 That's all. Build and run again.
 
+## Angular proxy instead of NGINX
+
+Since Angular 5 the proxy can be configured for development evironment.
+This feature can be used instead of NGNIX described above.
+Create file `proxy.conf.json` in main directory.
+
+```json
+{
+  "/api/*": {
+    "target": "http://localhost:8090",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}
+```
+
+Now you can run `ng` with `--proxy-config` parameter.
+
+```bash
+`ng serve --proxy-config proxy.conf.json`
+```
+
+If you want run with `npm start` change also `package.json`.
+
+```json
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve --proxy-config proxy.conf.json",
+```
+
 References:
 
 1. <https://www.npmjs.com/package/keycloak-angular>
 2. <https://dzone.com/articles/secure-spring-boot-application-with-keycloak>
 3. <https://jwt.io/>
 4. <https://stackoverflow.com/questions/59289320/keycloak-check-sso-create>
+5. <https://angular.io/guide/build#bypass-the-proxy>
